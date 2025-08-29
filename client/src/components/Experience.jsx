@@ -27,55 +27,53 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gray-900/50">
-      <div className="container mx-auto px-4">
-        <motion.h2 
-          className="section-title"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          Experience
-        </motion.h2>
-        
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 h-full w-1 bg-gradient-to-b from-indigo-600 to-purple-600 transform -translate-x-1/2"></div>
-          
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <motion.div 
-                key={index}
-                className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-indigo-600 transform -translate-x-1/2 z-10"></div>
-                
-                <div className="ml-12 md:ml-0 md:w-1/2 mb-4 md:mb-0"></div>
-                
-                <div className="ml-12 md:mx-auto md:w-5/6">
-                  <div className="card">
-                    <h3 className="text-xl font-semibold text-white mb-2">{exp.title}</h3>
-                    <h4 className="text-lg text-indigo-400 mb-2">{exp.company}</h4>
-                    <p className="text-gray-400 mb-4">{exp.period} | {exp.location}</p>
-                    <ul className="list-disc list-inside text-gray-300 space-y-2">
-                      {exp.responsibilities.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+<section id="experience" className="experience-section">
+  <div className="container">
+    <motion.h2 
+      className="section-title"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+    >
+      Experience
+    </motion.h2>
+    
+    <div className="experience-timeline">
+      {/* Timeline line */}
+      <div className="timeline-line"></div>
+      
+      <div className="experience-items">
+        {experiences.map((exp, index) => (
+          <motion.div 
+            key={index}
+            className="experience-item"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+            viewport={{ once: true }}
+          >
+            {/* Timeline dot */}
+            <div className="timeline-dot"></div>
+            
+            <div className="experience-content">
+              <div className="experience-card">
+                <h3 className="experience-title">{exp.title}</h3>
+                <h4 className="experience-company">{exp.company}</h4>
+                <p className="experience-details">{exp.period} | {exp.location}</p>
+                <ul className="experience-list">
+                  {exp.responsibilities.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   );
 };
 

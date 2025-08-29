@@ -24,56 +24,55 @@ const Header = () => {
 
   return (
     <motion.header 
-      className={`fixed w-full z-50 transition-all duration-300 ${scroll ? 'py-3 bg-black/80 backdrop-blur-md' : 'py-5'}`}
+      className={`header ${scroll ? 'header-scrolled' : 'header-normal'}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
+      <div className="header-container">
         <motion.a 
           href="#home" 
-          className="text-2xl font-bold gradient-text"
+          className="logo"
           whileHover={{ scale: 1.05 }}
         >
           Rishu.
         </motion.a>
 
-        <nav className="hidden md:flex space-x-8">
+        <nav className="nav-desktop">
           {menuItems.map((item, index) => (
             <motion.a
               key={index}
               href={item.href}
-              className="text-gray-300 hover:text-white transition-colors relative group"
+              className="nav-link"
               whileHover={{ y: -2 }}
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-indigo-600 transition-all group-hover:w-full"></span>
             </motion.a>
           ))}
         </nav>
 
-        <div className="md:hidden">
-          <button onClick={() => setMobileMenu(true)} className="text-white p-2">
+        <div className="mobile-menu-btn">
+          <button onClick={() => setMobileMenu(true)}>
             <HiMenu size={24} />
           </button>
         </div>
 
         {/* Mobile Menu */}
         <motion.div 
-          className={`fixed top-0 right-0 h-full w-64 bg-black/95 backdrop-blur-md z-50 transform ${mobileMenu ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 md:hidden`}
+          className={`mobile-menu ${mobileMenu ? 'mobile-menu-open' : ''}`}
           initial={{ x: 300 }}
           animate={{ x: mobileMenu ? 0 : 300 }}
         >
-          <div className="p-5">
-            <button onClick={() => setMobileMenu(false)} className="text-white p-2 float-right">
+          <div className="mobile-menu-content">
+            <button onClick={() => setMobileMenu(false)} className="mobile-menu-close">
               <HiX size={24} />
             </button>
-            <div className="clear-both mt-16 flex flex-col space-y-6">
+            <div className="mobile-nav">
               {menuItems.map((item, index) => (
                 <motion.a
                   key={index}
                   href={item.href}
-                  className="text-gray-300 hover:text-white text-lg py-2 transition-colors"
+                  className="mobile-nav-link"
                   onClick={() => setMobileMenu(false)}
                   whileHover={{ x: 10 }}
                 >
