@@ -132,7 +132,11 @@ export const login = (email, password) => async (dispatch) => {
     );
     dispatch(userSlice.actions.clearAllErrors());
   } catch (error) {
-    dispatch(userSlice.actions.loginFailed(error.response.data.message));
+    const errorMessage =
+      error.response && error.response.data && error.response.data.message
+        ? error.response.data.message
+        : error.message || "Login failed";
+    dispatch(userSlice.actions.loginFailed(errorMessage));
   }
 };
 
