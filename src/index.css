@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  /* Subtle text highlight effect */
+  .neon-text {
+    text-shadow:
+      0 0 2px rgba(255, 255, 255, 0.4),
+      0 0 4px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Subtle border highlight effect */
+  .neon-border {
+    box-shadow:
+      0 0 3px rgba(255, 255, 255, 0.3),
+      0 0 5px rgba(255, 255, 255, 0.1);
+  }
+
+  /* Subtle pulse animation */
+  .neon-pulse {
+    animation: neon-pulse 3s infinite;
+  }
+
+  @keyframes neon-pulse {
+    0% {
+      opacity: 0.9;
+      box-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+      opacity: 1;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+      opacity: 0.9;
+      box-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  /* Very subtle glow animation */
+  .neon-glow {
+    animation: neon-glow 5s infinite;
+  }
+
+  @keyframes neon-glow {
+    0% {
+      text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+      text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  /* Subtle typing effect */
+  .neon-typing {
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(40, end), blink-caret 1s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgba(255, 255, 255, 0.5) }
+  }
+
+  /* Very subtle grid background */
+  .neon-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
