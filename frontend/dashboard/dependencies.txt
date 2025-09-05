@@ -1,0 +1,295 @@
+npm i react-redux @reduxjs/toolkit axios react-router-dom react-toastify
+
+npx shadcn-ui@latest add dropdown-menu label progress select separator slider slot tabs tooltip button input sheet card checkbox
+
+
+
+
+modified code
+ {/* <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    className={`flex h-9 w-9 items-center justify-center rounded-lg ${
+                      active === "Dashboard"
+                        ? "text-accent-foreground bg-accent"
+                        : "text-muted-foreground"
+                    } transition-colors hover:text-foreground md:h-8 md:w-8`}
+                    onClick={() => setActive("Dashboard")}
+                  >
+                    <Home className="w-5 h-5" />
+                    <span className="sr-only">Dashboard</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent className="select-none" side="right">
+                  Dashboard
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    className={`flex h-9 w-9 items-center justify-center rounded-lg ${
+                      active === "Add Project"
+                        ? "text-accent-foreground bg-accent"
+                        : "text-muted-foreground"
+                    } transition-colors hover:text-foreground md:h-8 md:w-8`}
+                    onClick={() => setActive("Add Project")}
+                  >
+                    <FolderGit className="w-5 h-5" />
+                    <span className="sr-only">Add Project</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent className="select-none" side="right">
+                  Add Project
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    className={`flex h-9 w-9 items-center justify-center rounded-lg ${
+                      active === "Add Skills"
+                        ? "text-accent-foreground bg-accent"
+                        : "text-muted-foreground"
+                    } transition-colors hover:text-foreground md:h-8 md:w-8`}
+                    onClick={() => setActive("Add Skills")}
+                  >
+                    <PencilRuler className="w-5 h-5" />
+                    <span className="sr-only">Add Skills</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent className="select-none" side="right">
+                  Add Skills
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    className={`flex h-9 w-9 items-center justify-center rounded-lg ${
+                      active === "Add Applications"
+                        ? "text-accent-foreground bg-accent"
+                        : "text-muted-foreground"
+                    } transition-colors hover:text-foreground md:h-8 md:w-8`}
+                    onClick={() => setActive("Add Applications")}
+                  >
+                    <LayoutGrid className="w-5 h-5" />
+                    <span className="sr-only">Add Applications</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent className="select-none" side="right">
+                  Add Applications
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    className={`flex h-9 w-9 items-center justify-center rounded-lg ${
+                      active === "Add Timeline"
+                        ? "text-accent-foreground bg-accent"
+                        : "text-muted-foreground"
+                    } transition-colors hover:text-foreground md:h-8 md:w-8`}
+                    onClick={() => setActive("Add Timeline")}
+                  >
+                    <History className="w-5 h-5" />
+                    <span className="sr-only">Add Timeline</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent className="select-none" side="right">
+                  Add Timeline
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    className={`flex h-9 w-9 items-center justify-center rounded-lg ${
+                      active === "Messages"
+                        ? "text-accent-foreground bg-accent"
+                        : "text-muted-foreground"
+                    } transition-colors hover:text-foreground md:h-8 md:w-8`}
+                    onClick={() => setActive("Messages")}
+                  >
+                    <MessageSquareMore className="w-5 h-5" />
+                    <span className="sr-only">Messages</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent className="select-none" side="right">
+                  Messages
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    className={`flex h-9 w-9 items-center justify-center rounded-lg ${
+                      active === "Account"
+                        ? "text-accent-foreground bg-accent"
+                        : "text-muted-foreground"
+                    } transition-colors hover:text-foreground md:h-8 md:w-8`}
+                    onClick={() => setActive("Account")}
+                  >
+                    <User className="w-5 h-5" />
+                    <span className="sr-only">Account</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent className="select-none" side="right">
+                  Account
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider> */}
+
+            {/* <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    className={`flex h-9 w-9 items-center justify-center rounded-lg ${
+                      active === "Logout"
+                        ? "text-accent-foreground bg-accent"
+                        : "text-muted-foreground"
+                    } transition-colors hover:text-foreground md:h-8 md:w-8`}
+                    onClick={handleLogout}
+                  >
+                    <LogOut className="w-5 h-5" />
+                    <span className="sr-only">Logout</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent className="select-none" side="right">
+                  Logout
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider> */}
+
+
+
+
+
+
+            {/* <Link
+                  href="#"
+                  className={`flex items-center gap-4 px-2.5 ${
+                    active === "Dashboard"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  onClick={() => setActive("Dashboard")}
+                >
+                  <Home />
+                  Dashboard
+                </Link>
+
+                <Link
+                  href="#"
+                  className={`flex items-center gap-4 px-2.5 ${
+                    active === "Add Project"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  onClick={() => setActive("Add Project")}
+                >
+                  <FolderGit />
+                  Add Project
+                </Link>
+
+                <Link
+                  href="#"
+                  className={`flex items-center gap-4 px-2.5 ${
+                    active === "Add Skill"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  onClick={() => setActive("Add Skill")}
+                >
+                  <PencilRuler />
+                  Add Skill
+                </Link>
+
+                <Link
+                  href="#"
+                  className={`flex items-center gap-4 px-2.5 ${
+                    active === "Add Application"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  onClick={() => setActive("Add Application")}
+                >
+                  <LayoutGrid />
+                  Add Application
+                </Link>
+
+                <Link
+                  href="#"
+                  className={`flex items-center gap-4 px-2.5 ${
+                    active === "Account"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  onClick={() => setActive("Account")}
+                >
+                  <User />
+                  Account
+                </Link>
+
+                <Link
+                  href="#"
+                  className={`flex items-center gap-4 px-2.5 ${
+                    active === "Add Timeline"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  onClick={() => setActive("Add Timeline")}
+                >
+                  <History />
+                  Add Timeline
+                </Link>
+
+                <Link
+                  href="#"
+                  className={`flex items-center gap-4 px-2.5 ${
+                    active === "Messages"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  onClick={() => setActive("Messages")}
+                >
+                  <MessageSquareMore />
+                  Messages
+                </Link> */}
+
+                 {/* <Link
+                  className={`flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground`}
+                  onClick={handleLogout}
+                >
+                  <LogOut className="h-5 w-5" />
+                  Logout
+                </Link> */}
+
+
+
+
+
+                {/* <Link
+              href="#"
+              className={
+                selectedComponent === "Profile"
+                  ? "font-semibold text-primary pointer-events-none"
+                  : ""
+              }
+              onClick={() => setSelectedComponent("Profile")}
+            >
+              Profile
+            </Link> */}

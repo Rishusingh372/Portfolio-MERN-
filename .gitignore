@@ -4,43 +4,53 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-# Dependencies
-node_modules
-/.pnp
-.pnp.js
+# Dependency directories
+node_modules/
+frontend/dashboard/node_modules/
+frontend/portfolio/node_modules/
+backend/node_modules/
 
-# Build files
-dist
-dist-ssr
-build
-*.local
+# Build directories
+frontend/dashboard/build/
+frontend/portfolio/build/
+frontend/dashboard/dist/
+frontend/portfolio/dist/
 
 # Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+backend/config/config.env
+frontend/dashboard/.env
+frontend/portfolio/.env
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Cache directories
+frontend/dashboard/.next/
+frontend/portfolio/.next/
+frontend/dashboard/.cache/
+frontend/portfolio/.cache/
+
+# Miscellaneous
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+*.pem
+*.pid
+*.seed
+*.log
+*.sublime-project
+*.sublime-workspace
 
-# Testing
-/coverage
+# IDE specific files
+.vscode/
+.idea/
+*.swp
 
-# Misc
-.DS_Store
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Operating system specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Generated files from npm or yarn
+package-lock.json
+yarn.lock
+
+# Build artifacts and intermediates
+backend/dist/
+backend/build/

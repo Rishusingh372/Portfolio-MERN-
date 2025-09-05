@@ -1,0 +1,40 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+/node_modules/
+
+# Environment variables
+/config/config.env
+
+# Miscellaneous
+.DS_Store
+*.pem
+*.pid
+*.seed
+*.log
+*.sublime-project
+*.sublime-workspace
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+
+# Operating system specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Generated files from npm or yarn
+package-lock.json
+yarn.lock
+
+# Build artifacts and intermediates
+/dist/
+/build/
