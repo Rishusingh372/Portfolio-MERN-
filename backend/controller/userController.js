@@ -91,6 +91,8 @@ export const register = catchAsyncErrors(async (req, res, next) => {
 export const login = catchAsyncErrors(async (req, res, next) => {
   const { email, password } = req.body;
 
+  console.log("Login attempt for email:", email);
+
   if (!email || !password) {
     return next(new ErrorHandler("Email and Password are required!"));
   }
@@ -100,10 +102,12 @@ export const login = catchAsyncErrors(async (req, res, next) => {
   );
 
   if (!user) {
+    console.log("User not found for email:", email);
     return next(new ErrorHandler("Invalid Email or Password!"));
   }
 
   const isPasswordMatch = await user.comparePassword(password);
+  console.log("Password match result:", isPasswordMatch);
 
   if (!isPasswordMatch) {
     return next(new ErrorHandler("Invalid Email or Password!"));

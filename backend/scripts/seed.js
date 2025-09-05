@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import { User } from "../models/userSchema.js";
 
-dotenv.config({ path: "backend/config/config.env" });
+dotenv.config({ path: "./config/config.env" });
 
 const seedDatabase = async () => {
   try {
@@ -14,10 +14,10 @@ const seedDatabase = async () => {
     const defaultUser = {
       _id: "66f10026b24a1c4032f406c4", // Hardcoded ID from userController
       fullName: "Default User",
-      email: "default@example.com",
+      email: "rishu27@gmail.com",
       phone: "1234567890",
       aboutMe: "This is the default user for the portfolio.",
-      password: "defaultpassword", // Will be hashed by pre-save hook
+      password: "Pass@123", // Will be hashed by pre-save hook
       avatar: {
         public_id: "default_avatar",
         url: "https://via.placeholder.com/150", // Placeholder URL
@@ -32,8 +32,9 @@ const seedDatabase = async () => {
     // Check if user already exists
     const existingUser = await User.findById(defaultUser._id);
     if (existingUser) {
-      console.log("Default user already exists");
-      return;
+      console.log("Default user already exists, deleting...");
+      await User.findByIdAndDelete(defaultUser._id);
+      console.log("Default user deleted successfully");
     }
 
     // Create the user

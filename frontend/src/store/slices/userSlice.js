@@ -118,7 +118,7 @@ const userSlice = createSlice({
 export const login = (email, password) => async (dispatch) => {
   dispatch(userSlice.actions.loginRequest());
   try {
-    const { data } = await axios.post(
+    const { data, headers } = await axios.post(
       "http://localhost:4000/api/v1/user/login",
       { email, password },
       {
@@ -126,6 +126,10 @@ export const login = (email, password) => async (dispatch) => {
         headers: { "Content-Type": "application/json" },
       }
     );
+
+    // Extract the cookie from the response headers and set it manually if needed
+    // (Usually, withCredentials: true should handle this automatically)
+    // But if the cookie is not set, you may need to handle it here.
 
     dispatch(
       userSlice.actions.loginSuccess({ message: data.message, user: data.user })
